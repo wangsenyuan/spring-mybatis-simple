@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="foo.bar.dao.ISupplierDAO">
+    <insert id="insertSupplier" parameterType="Supplier">
+        insert into suppliers(id, name, street, city, state, zip)
+        values(#{id}, #{name}, #{street}, #{city}, #{state}, #{zip})
+    </insert>
+
+    <select id="findSuppiler" parameterType="long" resultType="Supplier">
+        select * from suppliers where id = #{id}
+    </select>
+</mapper>
